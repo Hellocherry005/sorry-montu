@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Sunshine</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffcce0, #ffe6f0);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #e60073;
+    }
+    .intro-message {
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+    .game-container {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
+      height: 300px;
+    }
+    .heart {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+    }
+    .game-message {
+      margin-top: 20px;
+      font-size: 1rem;
+      min-height: 40px;
+      color: #cc0066;
+    }
+    .love-letter {
+      background: white;
+      padding: 30px;
+      margin: 40px auto;
+      width: 85%;
+      max-width: 700px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+    .album {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px auto;
+    }
+    .album img {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hey Sunshine 🌞</h1>
+    <p class="intro-message">I know you're upset... but my love for you is stronger than anything. Want to play a little game and read something special?</p>
+  </header>
+
+  <section class="game-container" id="game">
+    <p class="game-message" id="gameMessage">Find all the hidden hearts (7 total) 💗</p>
+  </section>
+
+  <section class="love-letter">
+    <h2>💌 A Letter to My Drishika</h2>
+    <p>
+      My dearest Montu,<br><br>
+      No..No..No… my <strong>Sunshine</strong>, the light of my world 🌞<br><br>
+      I know you're upset right now, and maybe I deserve it. I’ve again messed up. I’ve again hurt the one person I never wanted to see sad—not even for a moment. And for that, I’m truly, deeply sorry. (again)<br><br>
+      You mean the world to me, and yet sometimes I fail to show you just how much. But I need you to know this: I  <strong>crazily beg for your attention </strong>. I want to be the one who lingers in your thoughts. I want to be that little voice in your heart saying, <em>“He’s thinking of me right now.”</em> Because I am. Every moment.<br><br>
+      I want to be the only one whose name makes your heart skip. I want to be the one who lives in your smile and sleeps in your arms. I want you to know, I really don't want anyone who will have your 1% attention. I only want to <strong>make you mine</strong><br>
+      And honestly… if I could choose how to go, it would be <strong>laying in your lap</strong>, with your fingers in my hair, whispering that everything is okay again. That you still love me.<br><br>
+      You’re my everything, Drishika. The one I adore, protect, cherish… and sometimes unintentionally hurt. But I promise, I’ll learn again. I’ll grow more. I’ll never stop trying to be the boyfriend you deserve.<br><br>
+      Until your anger melts and your smile returns, I’ll be waiting here… with arms full of love, and a heart that belongs only to you.<br><br>
+      Forever yours,<br>
+      <strong>Pookie 💘</strong>
+    </p>
+  </section>
+
+  <section class="album">
+    <img src="photo1.jpg" alt="Memory 1">
+    <img src="photo2.jpg" alt="Memory 2">
+    <img src="photo3.jpg" alt="Memory 3">
+  </section>
+
+  <footer>
+    Made with love by Spandy 💖
+  </footer>
+
+  <script>
+    const messages = [
+      "You found a piece of my heart 💘",
+      "You're my smile when I'm lost 💖",
+      "My love for you never fades 💞",
+      "Every beat is for you 💓",
+      "You’re the reason I breathe 💕",
+      "I can't stop loving you 🌹",
+      "All I want is you 💍"
+    ];
+
+    let found = 0;
+    const game = document.getElementById("game");
+
+    for (let i = 0; i < messages.length; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.top = Math.random() * 220 + "px";
+      heart.style.left = Math.random() * 90 + "%";
+      heart.onclick = function() {
+        document.getElementById("gameMessage").textContent = messages[i];
+        heart.remove();
+        found++;
+        if (found === messages.length) {
+          document.getElementById("gameMessage").textContent = "You've found all the pieces of my heart 💖 Now let's heal together.";
+        }
+      };
+      game.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
